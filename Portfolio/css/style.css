@@ -143,23 +143,35 @@ nav {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: var(--space-lg);
+    gap: var(--space-sm);
     margin-left: auto;
 }
 
 .logo a,
 .nav-links a {
     text-decoration: none;
-    padding-bottom: 0.25rem;
-    border-bottom: 2px solid transparent;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-    border-bottom-color: var(--color-accent);
+.logo a {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.nav-links a {
+    display: block;
+    padding: 0.4rem 0.85rem;
+    border-radius: 0.5rem;
+    color: var(--color-text);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover {
+    background-color: color-mix(in srgb, var(--color-accent) 12%, transparent);
 }
 
 .nav-links a.active {
+    background-color: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    color: var(--color-accent);
     font-weight: 600;
 }
 
@@ -182,21 +194,43 @@ nav {
 
 .btn {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
+    padding: 0.8rem 1.75rem;
     background-color: var(--color-accent);
     color: var(--color-bg);
-    border: none;
-    border-radius: 0.5rem;
+    border: 2px solid var(--color-accent);
+    border-radius: 0.6rem;
     font: inherit;
     font-weight: 600;
+    letter-spacing: 0.01em;
     text-decoration: none;
     cursor: pointer;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--color-accent) 30%, transparent);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease,
+        background-color 0.2s ease, color 0.2s ease;
 }
 
 .btn:hover {
-    opacity: 0.85;
+    filter: brightness(1.1);
     transform: translateY(-2px);
+    box-shadow: 0 8px 20px color-mix(in srgb, var(--color-accent) 40%, transparent);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px color-mix(in srgb, var(--color-accent) 30%, transparent);
+}
+
+/* Secondary action: outlined, fills in on hover. */
+.btn-outline {
+    background-color: transparent;
+    color: var(--color-accent);
+    box-shadow: none;
+}
+
+.btn-outline:hover {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+    filter: none;
 }
 
 .btn:focus-visible {
@@ -237,6 +271,8 @@ nav {
 .project .btn {
     margin-top: auto;
     align-self: flex-start;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.95rem;
 }
 
 .project ul {
@@ -284,19 +320,17 @@ textarea:focus-visible {
 
 .hamburger-button {
     display: none;
-    background: none;
-    border: none;
-    padding: var(--space-sm);
-    cursor: pointer;
 }
 
 .hamburger-icon,
 .hamburger-icon::before,
 .hamburger-icon::after {
     display: block;
-    width: 24px;
-    height: 3px;
-    background-color: var(--color-text);
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: currentColor;
+    transition: transform 0.2s ease, top 0.2s ease, background-color 0.2s ease;
 }
 
 .hamburger-icon {
@@ -310,26 +344,59 @@ textarea:focus-visible {
     left: 0;
 }
 
-.hamburger-icon::before { top: -7px; }
-.hamburger-icon::after { top: 7px; }
+.hamburger-icon::before { top: -6px; }
+.hamburger-icon::after { top: 6px; }
 
-.theme-button {
+/* Open menu: bars morph into an X. */
+[aria-expanded="true"] > .hamburger-icon {
+    background-color: transparent;
+}
+
+[aria-expanded="true"] > .hamburger-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+[aria-expanded="true"] > .hamburger-icon::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+.theme-button,
+.hamburger-button {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    place-items: center;
     background: none;
     border: 1px solid var(--color-border);
     border-radius: 0.5rem;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.theme-button {
+    display: grid;
     order: 1;
     margin-left: var(--space-md);
-    padding: var(--space-sm) var(--space-md);
-    color: var(--color-text);
-    font-family: var(--font-body);
-    cursor: pointer;
 }
 
-.theme-button:hover {
+.theme-button:hover,
+.hamburger-button:hover {
     border-color: var(--color-accent);
+    color: var(--color-accent);
+    background-color: color-mix(in srgb, var(--color-accent) 10%, transparent);
 }
 
-.theme-button:focus-visible {
+/* Show the icon for the theme you'd switch TO: sun while dark, moon while light. */
+:root[data-theme="light"] .icon-sun,
+:root:not([data-theme="light"]) .icon-moon {
+    display: none;
+}
+
+.theme-button:focus-visible,
+.hamburger-button:focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
 }
@@ -344,7 +411,8 @@ textarea:focus-visible {
     }
 
     .hamburger-button {
-        display: block;
+        display: grid;
+        margin-left: var(--space-sm);
     }
 
     .theme-button {

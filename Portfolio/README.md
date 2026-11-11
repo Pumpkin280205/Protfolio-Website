@@ -13,5 +13,3 @@ A responsive personal portfolio showing my projects, skills, education and conta
 ## Built with
 HTML, CSS (custom properties, grid, flexbox) and vanilla JavaScript. No frameworks.
 
-## Screenshot
-_add a screenshot here_
