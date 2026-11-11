@@ -225,11 +225,22 @@ nav {
 }
 
 .project {
+    display: flex;
+    flex-direction: column;
     background-color: var(--color-surface);
     padding: var(--space-md);
     border-radius: 1rem;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     border: 1px solid var(--color-border);
+}
+
+.project .btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.project ul {
+    margin-bottom: var(--space-md);
 }
 
 .project:hover {
@@ -425,6 +436,10 @@ footer p {
 
     h1 { font-size: 3.5rem; }
     h2 { font-size: 2.25rem; }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* 4 projects: 2x2 instead of 3 + 1 orphan */
+    }
 
     #home {
         min-height: 75vh;
