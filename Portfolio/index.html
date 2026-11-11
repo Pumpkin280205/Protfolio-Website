@@ -5,7 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Anjor Misser's Portfolio of Projects and more.">
+    <meta name="description"
+        content="Portfolio of Anjor Misser, a final year computer science student building Android, MERN and ASP.NET Core apps. See projects, skills and contact details.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Anjor Misser - Portfolio">
+    <meta property="og:description"
+        content="Final year computer science student. Projects in Kotlin, React/Node.js and C#/ASP.NET Core.">
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f172a'/%3E%3Ctext x='16' y='22' font-size='16' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='%2338bdf8'%3EAM%3C/text%3E%3C/svg%3E">
     <title>Anjor Misser - Portfolio of Projects and more</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +28,7 @@
                 <a href="#home">Anjor Misser</a>
             </div>
             <button class="theme-button" type="button" aria-label="Toggle dark mode" aria-pressed="true">Theme</button>
-            <button class="hamburger-button" aria-label="Toggle navigation menu" aria-expanded="false"
+            <button class="hamburger-button" type="button" aria-label="Toggle navigation menu" aria-expanded="false"
                 aria-controls="nav-menu">
                 <span class="hamburger-icon"></span>
             </button>
@@ -49,11 +56,10 @@
         <section id="about" class="container">
             <h2>About Me</h2>
             <div class="about-content">
-                <p> I am Anjor Misser, a final year student who will be graduating in 2027.
-                    I have been studying computer science at Varsity College and have
-                    learnt a lot in C# and Kotlin. I am a very hardworking and dedicated individual who is always
-                    willing to learn new things. I am also a team player and enjoy working with others to achieve a
-                    common goal.
+                <p>I'm Anjor Misser, a final year Computer and Information Sciences student at Varsity College,
+                    graduating in 2027. I have built Android apps in Kotlin that pull data from public APIs, a MERN
+                    stack freelancer marketplace, and an ASP.NET Core attendance system with a physical scanner.
+                    I enjoy working in a team and I'm looking for a role where I can keep building real applications.
                 </p>
                 <img src="images/profile.jpg" alt="Anjor Misser's Profile Picture" width="200" height="200">
             </div>
@@ -70,6 +76,16 @@
                 <li>Java</li>
                 <li>C#</li>
                 <li>Kotlin</li>
+            </ul>
+
+            <h3>Frameworks and Platforms</h3>
+            <ul>
+                <li>React</li>
+                <li>Node.js</li>
+                <li>Express</li>
+                <li>ASP.NET Core</li>
+                <li>EF Core</li>
+                <li>Android Studio</li>
             </ul>
 
             <h3>Tools</h3>
@@ -102,7 +118,6 @@
                     <p>An app that shows you the news of any country you choose by searching.</p>
                     <a href="https://github.com/Pumpkin280205/LocalLens" target="_blank" rel="noopener noreferrer"
                         class="btn">View Project on GitHub</a>
-                    <img src="images/projects/locallens.png" alt="LocalLens Main Screen" width="400" height="300">
                     <ul>
                         <li>Developed using Kotlin and Android Studio.</li>
                         <li>Implemented API integration for fetching news data.</li>
@@ -115,7 +130,6 @@
                     <p>An app that shows you any book by searching.</p>
                     <a href="https://github.com/Pumpkin280205/BookScout-App" target="_blank" rel="noopener noreferrer"
                         class="btn">View Project on GitHub</a>
-                    <img src="images/projects/bookscout.png" alt="BookScout Main Screen" width="400" height="300">
                     <ul>
                         <li>Developed using Kotlin and Android Studio.</li>
                         <li>Implemented API integration for fetching book data.</li>
@@ -125,35 +139,29 @@
 
                 <article class="project">
                     <h3>HustleHub+</h3>
-                    <p>A freelancer marketplace where freelancers post jobs and clients book them. Built by a group
-                        using the MERN stack (MongoDB, Express, React, Node.js), with security measures across the
-                        backend.
-                    </p>
+                    <p>A group-built freelancer marketplace where freelancers post jobs and clients book them, using
+                        the MERN stack.</p>
                     <a href="https://github.com/Pumpkin280205/HustleHub-Plus" target="_blank" rel="noopener noreferrer"
                         class="btn">View Project on GitHub</a>
-                    <img src="images/projects/hustlehubplus.png" alt="HustleHub+ Main Screen" width="400" height="300">
                     <ul>
                         <li>Built job-posting and booking flows for freelancers and clients.</li>
-                        <li>Developed using React and Node.js.</li>
-                        <li>Implemented API integration for fetching freelancer data.</li>
-                        <li>This has a simple to use interface, which won't make users frustrated.</li>
+                        <li>Stack: MongoDB, Express, React and Node.js.</li>
+                        <li>Added security measures across the backend.</li>
+                        <li>Designed a simple interface for both freelancers and clients.</li>
                     </ul>
                 </article>
 
                 <article class="project">
                     <h3>Staff Attendance and Break Management System</h3>
-                    <p>A system that uses a physical scanner to record employee clock-in, clock-out and break times.
-                        Built by a group in C# with ASP.NET Core, EF Core (MVC) and MongoDB Atlas.
-                    </p>
+                    <p>A group-built system that uses a physical scanner to record employee clock-in, clock-out and
+                        break times.</p>
                     <a href="https://github.com/Pumpkin280205/WIL-AFCON-Development" target="_blank"
                         rel="noopener noreferrer" class="btn">View Project on GitHub</a>
-                    <img src="images/projects/staff-attendance.png" alt="Staff Attendance Main Screen" width="400"
-                        height="300">
                     <ul>
                         <li>Built scanner-based clock-in and break tracking.</li>
-                        <li>Developed using C# and ASP.NET Core.</li>
-                        <li>Implemented database integration for storing attendance data.</li>
-                        <li>Designed a user-friendly interface that still shows a level of professionalism.</li>
+                        <li>Stack: C#, ASP.NET Core MVC and EF Core.</li>
+                        <li>Stored attendance records in MongoDB Atlas.</li>
+                        <li>Designed a clean interface for managing staff attendance.</li>
                     </ul>
                 </article>
             </div>
@@ -163,39 +171,44 @@
 
         <section id="education" class="container">
             <h2>Education</h2>
-            <h3>Varsity College Degree</h3>
+            <h3>Varsity College</h3>
             <ul>
                 <li>Bachelor of Computer and Information Sciences in Application Development (2024–2027)</li>
-                <li>Relevant Courses: Data Structures, Algorithms, Database Management, Web Development</li>
+                <li>Relevant courses: Data Structures, Algorithms, Database Management, Web Development</li>
             </ul>
-            <h3>High School</h3>
+            <h3>Lonehill International Academy</h3>
             <ul>
-                <li>A Levels at Lonehill International Academy (2019–2023)</li>
+                <li>A Levels (2019–2023)</li>
             </ul>
         </section>
 
         <section id="contact" class="container">
             <h2>Contact</h2>
-            <form>
+            <form id="contact-form" novalidate>
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-error">
+                    <p class="error" id="name-error"></p>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" autocomplete="email" required
+                        aria-describedby="email-error">
+                    <p class="error" id="email-error"></p>
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <textarea id="message" name="message" rows="5" required aria-describedby="message-error"></textarea>
+                    <p class="error" id="message-error"></p>
                 </div>
                 <button type="submit" class="btn">Send Message</button>
+                <p id="form-status" role="status"></p>
             </form>
 
             <ul class="contact-links">
                 <li><a href="mailto:anjor.misser@gmail.com">Email me</a></li>
                 <li><a href="https://github.com/Pumpkin280205" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-                <li><a href="www.linkedin.com/in/anjor-misser-1284bb363" target="_blank"
+                <li><a href="https://www.linkedin.com/in/anjor-misser-1284bb363" target="_blank"
                         rel="noopener noreferrer">LinkedIn</a></li>
             </ul>
 
@@ -203,7 +216,7 @@
     </main>
 
     <footer>
-        <p>&copy; <span id="2026"></span> Anjor Misser. All rights reserved.</p>
+        <p>&copy; <span id="year">2026</span> Anjor Misser. All rights reserved.</p>
     </footer>
 
     <script src="js/script.js"></script>
