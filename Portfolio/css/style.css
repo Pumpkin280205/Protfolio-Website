@@ -13,6 +13,10 @@
     --color-accent: #05dd5f;
     --color-border: #787878;
     --color-logo: #ffffff;
+    --color-error: #ef4444;
+    --btn-text: #010101;
+    --card-btn: #05dd5f;
+    --card-btn-text: #010101;
     --card-bg: #010101;
     --card-text: #ffffff;
     --card-border: #055702;
@@ -32,12 +36,16 @@
 
 /* Light palette: keep identical to the prefers-color-scheme block below. */
 :root[data-theme="light"] {
-    --color-bg: #a0a1a2;
+    --color-bg: #f8fafc;
     --color-surface: #ffffff;
     --color-text: #0f172a;
     --color-accent: #0369a1;
     --color-border: #cbd5e1;
     --color-logo: #000000;
+    --color-error: #b91c1c;
+    --btn-text: #ffffff;
+    --card-btn: #ffffff;
+    --card-btn-text: #1954bb;
     --card-bg: #1954bb;
     --card-text: #e2e8f0;
     --card-border: #05368b;
@@ -54,7 +62,12 @@
         --color-text: #0f172a;
         --color-accent: #0369a1;
         --color-border: #cbd5e1;
-        --card-bg: #055702;
+        --color-logo: #000000;
+        --color-error: #b91c1c;
+        --btn-text: #ffffff;
+        --card-btn: #ffffff;
+        --card-btn-text: #1954bb;
+        --card-bg: #1954bb;
         --card-text: #e2e8f0;
         --card-border: #05368b;
         --field-bg: #2b2b2b;
@@ -202,7 +215,7 @@ nav {
 
 .nav-links a.active {
     background-color: color-mix(in srgb, var(--color-accent) 18%, transparent);
-    color: var(--color-accent);
+    color: var(--color-text);
     font-weight: 600;
 }
 
@@ -227,7 +240,7 @@ nav {
     display: inline-block;
     padding: 0.8rem 1.75rem;
     background-color: var(--color-accent);
-    color: var(--color-bg);
+    color: var(--btn-text);
     border: 2px solid var(--color-accent);
     border-radius: 0.6rem;
     font: inherit;
@@ -260,8 +273,19 @@ nav {
 
 .btn-outline:hover {
     background-color: var(--color-accent);
-    color: var(--color-bg);
+    color: var(--btn-text);
     filter: none;
+}
+
+/* Cards have their own background, so their buttons get their own colours. */
+.project .btn-outline {
+    color: var(--card-btn);
+    border-color: var(--card-btn);
+}
+
+.project .btn-outline:hover {
+    background-color: var(--card-btn);
+    color: var(--card-btn-text);
 }
 
 .btn:focus-visible {
@@ -490,13 +514,9 @@ textarea:focus-visible {
 }
 
 .error {
-    color: #ef4444;
+    color: var(--color-error);
     font-size: 0.9rem;
     margin: 0;
-}
-
-:root[data-theme="light"] .error {
-    color: #b91c1c;
 }
 
 .error:empty {
