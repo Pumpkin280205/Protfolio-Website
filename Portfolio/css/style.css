@@ -12,10 +12,13 @@
     --color-text: #e2e8f0;
     --color-accent: #05dd5f;
     --color-border: #787878;
-    --color-logo:#ffffff;
+    --color-logo: #ffffff;
     --card-bg: #010101;
     --card-text: #ffffff;
-    --card-border:#055702;
+    --card-border: #055702;
+    --field-bg: #2b2b2b;
+    --field-text: #e2e8f0;
+    --field-border: #555555;
     --shadow-hover: 0 8px 24px rgb(0 0 0 / 0.4);
 
     --font-body: "Inter", system-ui, sans-serif;
@@ -37,7 +40,10 @@
     --color-logo: #000000;
     --card-bg: #1954bb;
     --card-text: #e2e8f0;
-    --card-border:#05368b;
+    --card-border: #05368b;
+    --field-bg: #2b2b2b;
+    --field-text: #f1f5f9;
+    --field-border: #555555;
     --shadow-hover: 0 6px 16px rgb(15 23 42 / 0.1);
 }
 
@@ -50,7 +56,10 @@
         --color-border: #cbd5e1;
         --card-bg: #055702;
         --card-text: #e2e8f0;
-        --card-border:#05368b;
+        --card-border: #05368b;
+        --field-bg: #2b2b2b;
+        --field-text: #f1f5f9;
+        --field-border: #555555;
         --shadow-hover: 0 6px 16px rgb(15 23 42 / 0.1);
     }
 }
@@ -322,9 +331,9 @@ input,
 textarea {
     width: 100%;
     padding: 0.75rem;
-    background-color: var(--color-surface);
-    color: var(--color-text);
-    border: 1px solid var(--color-border);
+    background-color: var(--field-bg);     
+    color: var(--field-text);               
+    border: 1px solid var(--field-border); 
     border-radius: 0.5rem;
     font: inherit;
 }
