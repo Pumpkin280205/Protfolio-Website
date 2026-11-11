@@ -7,11 +7,15 @@
 }
 
 :root {
-    --color-bg: #0f172a;
-    --color-surface: #1e293b;
+    --color-bg: #010101;
+    --color-surface: #055702;
     --color-text: #e2e8f0;
-    --color-accent: #38bdf8;
-    --color-border: #334155;
+    --color-accent: #05dd5f;
+    --color-border: #787878;
+    --color-logo:#ffffff;
+    --card-bg: #010101;
+    --card-text: #ffffff;
+    --card-border:#055702;
     --shadow-hover: 0 8px 24px rgb(0 0 0 / 0.4);
 
     --font-body: "Inter", system-ui, sans-serif;
@@ -25,11 +29,15 @@
 
 /* Light palette: keep identical to the prefers-color-scheme block below. */
 :root[data-theme="light"] {
-    --color-bg: #f8fafc;
+    --color-bg: #a0a1a2;
     --color-surface: #ffffff;
     --color-text: #0f172a;
     --color-accent: #0369a1;
     --color-border: #cbd5e1;
+    --color-logo: #000000;
+    --card-bg: #1954bb;
+    --card-text: #e2e8f0;
+    --card-border:#05368b;
     --shadow-hover: 0 6px 16px rgb(15 23 42 / 0.1);
 }
 
@@ -40,6 +48,9 @@
         --color-text: #0f172a;
         --color-accent: #0369a1;
         --color-border: #cbd5e1;
+        --card-bg: #055702;
+        --card-text: #e2e8f0;
+        --card-border:#05368b;
         --shadow-hover: 0 6px 16px rgb(15 23 42 / 0.1);
     }
 }
@@ -71,12 +82,18 @@ body {
     line-height: 1.6;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: var(--font-heading);
     line-height: 1.2;
 }
 
-h1 { font-size: 2.5rem; }
+h1 {
+    font-size: 2.5rem;
+    color: var(--color-logo);
+}
+
 h2 {
     font-size: 2rem;
     margin-bottom: var(--space-md);
@@ -155,6 +172,11 @@ nav {
 .logo a {
     font-weight: 600;
     font-size: 1.1rem;
+    color: var(--color-logo);
+}
+
+.name {
+    color: var(--color-logo);
 }
 
 .nav-links a {
@@ -254,18 +276,19 @@ nav {
 
 .projects-grid {
     display: grid;
-    grid-template-columns:  repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
     gap: var(--space-lg);
 }
 
 .project {
     display: flex;
     flex-direction: column;
-    background-color: var(--color-surface);
+    background-color: var(--card-bg);
+    color: var(--card-text);
     padding: var(--space-md);
     border-radius: 1rem;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border: 1px solid var(--color-border);
+    border: 3px solid var(--card-border);
 }
 
 .project .btn {
@@ -344,20 +367,25 @@ textarea:focus-visible {
     left: 0;
 }
 
-.hamburger-icon::before { top: -6px; }
-.hamburger-icon::after { top: 6px; }
+.hamburger-icon::before {
+    top: -6px;
+}
+
+.hamburger-icon::after {
+    top: 6px;
+}
 
 /* Open menu: bars morph into an X. */
-[aria-expanded="true"] > .hamburger-icon {
+[aria-expanded="true"]>.hamburger-icon {
     background-color: transparent;
 }
 
-[aria-expanded="true"] > .hamburger-icon::before {
+[aria-expanded="true"]>.hamburger-icon::before {
     top: 0;
     transform: rotate(45deg);
 }
 
-[aria-expanded="true"] > .hamburger-icon::after {
+[aria-expanded="true"]>.hamburger-icon::after {
     top: 0;
     transform: rotate(-45deg);
 }
@@ -402,8 +430,13 @@ textarea:focus-visible {
 }
 
 @media (max-width: 768px) {
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.6rem; }
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
 
     .about-content {
         flex-direction: column;
@@ -502,11 +535,17 @@ footer p {
         max-width: 1150px;
     }
 
-    h1 { font-size: 3.5rem; }
-    h2 { font-size: 2.25rem; }
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    h2 {
+        font-size: 2.25rem;
+    }
 
     .projects-grid {
-        grid-template-columns: repeat(2, 1fr); /* 4 projects: 2x2 instead of 3 + 1 orphan */
+        grid-template-columns: repeat(2, 1fr);
+        /* 4 projects: 2x2 instead of 3 + 1 orphan */
     }
 
     #home {
