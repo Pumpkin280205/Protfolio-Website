@@ -2,7 +2,7 @@
 
 A responsive personal portfolio showcasing my projects, skills, education and contact details. Built for the Saiket internship.
 
-**Live site:** https://anjor-portfolio.onrender.com *(update if Render gives you a different URL)*
+**Live site:** https://anjor-portfolio.onrender.com 
 
 ## Features
 
@@ -42,10 +42,6 @@ Portfolio/
 └── README.md
 render.yaml        # Render static site config
 ```
-
-## Run locally
-
-No install needed. Open `Portfolio/index.html` in a browser, or serve the folder with any static server (for example the VS Code Live Server extension).
 
 ## Deployment
 
